@@ -1,0 +1,73 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "A",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "A",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "A",
+      "name": "name",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "A",
+      "name": "related",
+      "type": {
+        "Relation": {
+          "to": "A",
+          "to_fields": [],
+          "name": "AToA",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "A",
+      "name": "a",
+      "type": {
+        "Relation": {
+          "to": "A",
+          "to_fields": [
+            "id"
+          ],
+          "name": "AToA",
+          "on_delete": "None"
+        }
+      },
+      "arity": "optional",
+      "isUnique": false
+    }
+  ]
+}

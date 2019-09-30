@@ -1,0 +1,20 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "DeleteField",
+      "model": "UserLoginToken",
+      "name": "member"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Member",
+      "name": "role"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Member",
+      "name": "loginToken"
+    }
+  ]
+}
